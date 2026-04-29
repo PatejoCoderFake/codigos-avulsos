@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drop Down Menu</title>
+<style>
+body {
+	background-color: black;
+    display: grid;
+    place-items: center;
+    margin-top: 200px;
+    font-family: "Arial-black", sans-serif;
+    font-height: 900;
+    transition: 1s;
+}
+
+ /*drop serve como um pai que dita o tamanho dos elementos a seguir*/
+#drop {
+display: inline-block;
+}
+
+button {
+border: none;
+width: 200px;
+height: 80px;
+padding: 10px;
+cursor: pointer;
+font-size: 20pt;
+color: white;
+background-color: black;
+border: 2px solid black;
+}
+
+#caixa {
+text-align: center;
+transition: 1s;
+opacity: 0%;
+background-color: black;
+}
+
+#drop:hover #caixa {
+opacity: 100%;
+}
+
+.item {
+padding: 15px;
+color: white;
+font-size: 12pt;
+cursor: pointer;
+}
+
+#um, #dois, #tres {
+transition: .5s;
+}
+
+#um {
+background-color: red;
+}
+
+#um:hover {
+opacity: 60%;
+}
+
+#dois {
+background-color: purple;
+}
+
+#dois:hover {
+opacity: 60%;
+}
+
+#tres {
+background-color: orange;
+}
+
+#tres:hover {
+opacity: 60%;
+}
+
+</style>
+</head>
+
+<body id="pai">
+	<div id="drop">
+    <button>Cores</button>
+    	<section id="caixa">
+    		<div class="item" id="um">Vermelho</div>
+            <div class="item" id="dois">Roxo</div>
+            <div class="item" id="tres">Laranja</div>
+    	</section>
+    </div>
+</body>
+<script>
+let um = document.getElementsByClassName("item")[0];
+let dois = document.getElementsByClassName("item")[1];
+let tres = document.getElementsByClassName("item")[2];
+let pai = document.getElementById("pai");
+
+um.addEventListener("click", action1);
+dois.addEventListener("click", action2);
+tres.addEventListener("click", action3);
+
+function action1() {
+	pai.style.backgroundColor = "red";
+}
+
+function action2() {
+	pai.style.backgroundColor = "purple";
+}
+
+function action3() {
+	pai.style.backgroundColor = "orange";
+}
+
+</script>
+
+</html>

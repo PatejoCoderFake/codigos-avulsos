@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="_image/dragon.png" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #container {
+        overflow: hidden;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        transition: 1s;
+        background-image: url("_image/dragon.png");
+        background-size: 25%; /* faz a imagem cobrir a tela toda */
+        background-repeat: no-repeat;
+        background-position: center; /* centraliza */
+      }
+
+      .items {
+        font-family: arial-black, Sans-serif;
+        font-size: 18pt;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: 100%;
+        cursor: pointer;
+        opacity: 0%;
+        transition: 1s;
+        color: white;
+      }
+
+      .items:hover {
+        opacity: 100%;
+        box-shadow: 0px 0px 15px black, 3px 0px 10px black, 0px 3px 10px black;
+      }
+
+      p {
+        text-shadow: 3px 2px black, 2px 1px black;
+      }
+    </style>
+  </head>
+  <body id="container">
+    <div class="items"><p>Gmail</p></div>
+    <div class="items"><p>v86</p></div>
+    <div class="items"><p>Programiz</p></div>
+    <div class="items"><p>NextLeap</p></div>
+    <div class="items"><p>Drive</p></div>
+    <div class="items"><p>Biblioteca Virtual</p></div>
+    <div class="items"><p>W3 School</p></div>
+    <div class="items"><p>Portugol</p></div>
+    <div class="items"><p>ChatGPT</p></div>
+    <div class="items"><p>Unip</p></div>
+    <div class="items"><p>SAF</p></div>
+    <div class="items"><p>ACP</p></div>
+    <div class="items"><p>CADIN Estadual</p></div>
+    <div class="items"><p>CADIN Municipal</p></div>
+    <div class="items"><p>SPN</p></div>
+    <div class="items"><p>QSA</p></div>
+  </body>
+  
+  <script>
+    let pai = document.getElementById("container");
+    let b1 = document.getElementsByClassName("items")[0];
+    let b2 = document.getElementsByClassName("items")[1];
+    let b3 = document.getElementsByClassName("items")[2];
+    let b4 = document.getElementsByClassName("items")[3];
+    let b5 = document.getElementsByClassName("items")[4];
+    let b6 = document.getElementsByClassName("items")[5];
+    let b7 = document.getElementsByClassName("items")[6];
+    let b8 = document.getElementsByClassName("items")[7];
+    let b9 = document.getElementsByClassName("items")[8];
+    let b10 = document.getElementsByClassName("items")[9];
+    let b11 = document.getElementsByClassName("items")[10];
+    let b12 = document.getElementsByClassName("items")[11];
+    let b13 = document.getElementsByClassName("items")[12];
+    let b14 = document.getElementsByClassName("items")[13];
+    let b15 = document.getElementsByClassName("items")[14];
+    let b16 = document.getElementsByClassName("items")[15];
+
+    b1.style.backgroundColor = "rgb(254, 0, 0)";
+    b2.style.backgroundColor = "rgb(54, 111, 255)";
+    b3.style.backgroundColor = "rgb(115, 71, 214)";
+    b4.style.backgroundColor = "rgb(0, 0, 0)";
+    b5.style.backgroundColor = "rgb(255, 253, 0)";
+    b6.style.backgroundColor = "rgb(0, 0, 255)";
+    b7.style.backgroundColor = "rgb(86, 213, 60)";
+    b8.style.backgroundColor = "rgb(255, 159, 0)";
+    b9.style.backgroundColor = "rgb(0, 0, 0)";
+    b10.style.backgroundColor = "rgb(255, 255, 0)";
+    b11.style.backgroundColor = "rgb(255, 136, 0)";
+    b12.style.backgroundColor = "rgb(255, 255, 151)";
+    b13.style.backgroundColor = "rgb(255, 122, 112)";
+    b14.style.backgroundColor = "rgb(7, 238, 255)";
+    b15.style.backgroundColor = "rgb(210, 255, 0)";
+    b16.style.backgroundColor = "rgb(131, 255, 255)";
+
+    b1.addEventListener("click", () =>
+      mudar("rgb(254, 0, 0)", "https://mail.google.com/mail/u/0/#inbox")
+    );
+    b2.addEventListener("click", () =>
+      mudar("rgb(54, 111, 255)", "https://copy.sh/v86/")
+    );
+    b3.addEventListener("click", () =>
+      mudar(
+        "rgb(115, 71, 214)",
+        "https://www.programiz.com/java-programming/online-compiler/"
+      )
+    );
+    b4.addEventListener("click", () =>
+      mudar(
+        "rgb(0, 0, 0)",
+        "https://nextleap.app/online-compiler/javascript-programming"
+      )
+    );
+    b5.addEventListener("click", () =>
+      mudar("rgb(255, 253, 0)", "https://drive.google.com/drive/home")
+    );
+    b6.addEventListener("click", () =>
+      mudar(
+        "rgb(0, 0, 255)",
+        "https://plataforma.bvirtual.com.br/Account/Login?redirectUrl=%2F"
+      )
+    );
+    b7.addEventListener("click", () =>
+      mudar("rgb(86, 213, 60)", "https://www.w3schools.com/")
+    );
+    b8.addEventListener("click", () =>
+      mudar("rgb(255, 159, 0)", "https://portugol.dev/")
+    );
+    b9.addEventListener("click", () =>
+      mudar("rgb(0, 0, 0)", "https://chatgpt.com/?model=auto")
+    );
+    b10.addEventListener("click", () =>
+      mudar("rgb(255, 255, 0)", "https://www.unip.br/")
+    );
+    b11.addEventListener("click", () =>
+      mudar(
+        "rgb(255, 136, 0)",
+        "http://172.16.0.74:94/login/scr/login.asp?msg=Por+motivos+de+seguran%E7a+sua+sess%E3o+foi+finalizada%2C+por+favor+logue%2Dse+novamente%21"
+      )
+    );
+    b12.addEventListener("click", () =>
+      mudar("rgb(255, 255, 151)", "https://acp.saude.sp.gov.br/index.php")
+    );
+    b13.addEventListener("click", () =>
+      mudar(
+        "rgb(255, 122, 112)",
+        "https://www.fazenda.sp.gov.br/cadin_estadual/pages/publ/cadin.aspx"
+      )
+    );
+    b14.addEventListener("click", () =>
+      mudar(
+        "rgb(7, 238, 255)",
+        "https://www3.prefeitura.sp.gov.br/cadin/pesq_deb.aspx"
+      )
+    );
+    b15.addEventListener("click", () =>
+      mudar(
+        "rgb(210, 255, 0)",
+        "https://www8.receita.fazenda.gov.br/simplesnacional/aplicacoes.aspx?id=21"
+      )
+    );
+    b16.addEventListener("click", () =>
+      mudar(
+        "rgb(131, 255, 255)",
+        "https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp"
+      )
+    );
+
+    function mudar(x, href) {
+      pai.style.backgroundColor = x;
+      window.open(href, "_blank");
+    }
+  </script>
+</html>

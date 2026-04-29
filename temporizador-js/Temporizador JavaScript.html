@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Temporizador JavaScript</title>
+
+    <style>
+        body {
+            height: 100dvh;
+            display: grid;
+            place-items: center;
+        }
+
+        h1 {
+            background-color: black;
+            border-radius: 15px;
+            padding: 20px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="alvo"></h1>
+</body>
+    <script>
+        let alvo = document.getElementById("alvo");
+        let id = setInterval(() => {
+            alvo.innerHTML = id;
+        }, 5000);
+    </script>
+</html>

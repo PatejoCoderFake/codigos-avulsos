@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Exercicio #1 - 07/11/24</title>
+
+<style>
+body {
+	margin-top: 100px;
+	display: grid;
+    place-items: center;
+	background-color: black;
+	color:green;
+    font-size: 15pt;
+    font-family: 'montserrat', sans-serif;
+}
+
+form {
+display: grid;
+place-items: center;
+}
+
+form input#yname {
+margin-top: 20px;
+padding: 10px;
+border-radius: 5px;
+font-weight: 700;
+}
+
+form label {
+border: 3px solid green;
+border-radius: 25px;
+padding: 10px;
+}
+
+form button {
+padding: 8px 10px;
+border-radius: 5px;
+}
+
+#conteudo {
+margin-top: 100px;
+color: cyan;
+background-color: rgba(255, 0, 255, .5);
+padding: 10px 10px;
+border-radius: 25px;
+}
+
+</style> 
+
+</head>
+<body>
+	<form onsubmit="pegaNome(); return false;">
+    <label for="yname"> Seu nome </label>
+    <input type="text" id="yname" placeholder="Seu Nome"><br>
+    <button onclick="pegaNome()">Enviar</button>
+    </form>
+    
+    <p id="conteudo">Teste</p>
+    
+    <script>
+    function pegaNome() {
+    /* Tem a função de armazenar o nome na variavel */
+    let nome = document.getElementById("yname").value;
+    
+    /* Tem a função de escrever a menssagem usando os dados coletados para os visitante*/
+    let texto = "Olá, " + nome + " seja bem-vindo a está página!"; 
+    
+    /* Por fim junta tudo e executa */
+    document.getElementById("conteudo").innerHTML = texto;
+	}    
+
+</script>
+</body>
+</html>

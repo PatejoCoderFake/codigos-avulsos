@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Sensor de Posição Visual</title>
+  <style>
+    body {
+      font-family: monospace;
+      background: #1a1a1a;
+      color: #00ff99;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #card {
+      width: 300px;
+      height: 300px;
+      background-color: #222;
+      border: 2px dashed #00ff99;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    #info {
+      position: absolute;
+      bottom: 5px;
+      left: 20px;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    #debug {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="card">
+    Passe o mouse aqui
+    <div id="info"></div>
+  </div>
+
+  <div id="debug">
+    <p>Coordenadas do mouse:</p>
+    <p id="global">Global: X: -- | Y: --</p>
+    <p id="local">Relativo ao Card: X: -- | Y: --</p>
+  </div>
+
+  <script>
+    const card = document.getElementById("card");
+    const info = document.getElementById("info");
+    const global = document.getElementById("global");
+    const local = document.getElementById("local");
+
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX;
+      const y = e.clientY;
+      const localX = x - rect.left;
+      const localY = y - rect.top;
+
+      info.innerText = `↳ x: ${Math.round(localX)} | y: ${Math.round(localY)}`;
+      global.innerText = `Global: X: ${Math.round(x)} | Y: ${Math.round(y)}`;
+      local.innerText = `Relativo ao Card: X: ${Math.round(localX)} | Y: ${Math.round(localY)}`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      info.innerText = "";
+      global.innerText = "Global: X: -- | Y: --";
+      local.innerText = "Relativo ao Card: X: -- | Y: --";
+    });
+  </script>
+
+</body>
+</html>

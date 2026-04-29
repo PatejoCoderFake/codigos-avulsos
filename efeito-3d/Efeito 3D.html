@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Primeiro Card 3D</title>
+<style>
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: black;
+	font-family: "Comic Sans", sans-serif;
+}
+
+.card {
+	width: 290px;
+	height: 400px;
+	padding: 10px;
+	color: white;
+	cursor: crosshair;
+    transition: box-shadow .3s;
+	box-shadow: 0px 0px 0px cyan;
+	border-radius: 0 50px 0 50px;
+}
+
+#conteudo {
+	margin-left: 15px;
+    filter: grayscale(100%);
+    opacity: 10%;
+    transition: .5s;
+}
+
+.card:hover #conteudo {
+	filter:grayscale(0%);
+    opacity: 100%;
+}
+
+h1 {
+	font-size: 20pt;
+	margin-right: 50px;
+}
+
+#um {
+	font-size: 15pt;
+}
+
+#dois {
+	margin-right: 50px;
+	font-size: 15pt;
+}
+
+#um, #dois {
+	color: cyan;
+}
+
+h2 {
+	margin-top: 60px;
+	font-size: 18pt;
+}
+
+h1, h2 {
+color: yellow;
+}
+
+</style>
+</head>
+<body>
+	<section class="card">
+    	<section id="conteudo">
+        	<h1>Nova Habilidade: Efeito Following Shadow</h1>
+            <p id="um">+ Animação responsiva para elementos</p>
+            <p id="dois">+ Controle de posição do: mouse, elementos e rotação</p>
+            <H2>@Pátejo_Coder</h2>
+        </section>
+	</section>
+</body>
+<script>
+const card = document.querySelector(".card");
+
+card.addEventListener("mousemove", (mouse) => {
+	const rect = card.getBoundingClientRect();
+    const x = mouse.clientX - rect.left;
+    const y = mouse.clientY - rect.top;
+    const centerX = x - (rect.width / 2);
+    const centerY = y - (rect.height / 2);
+    const relativoMeio = Math.abs(centerX) + Math.abs(centerY);
+
+    
+    card.style.boxShadow = `${centerX / 5}px ${centerY / 5}px ${relativoMeio / 15}px cyan`;
+});
+
+card.addEventListener("mouseleave", () => {
+card.style.boxShadow = `0px 0px 0px black`;
+})
+</script>
+</html>

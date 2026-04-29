@@ -1,0 +1,163 @@
+<!doctype html>
+<head>
+    <title> Monta Tela SetTimeout </title>
+    <meta charset="utf-8"/>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body#base {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100dvw;
+            height: 100dvh;
+            background-color: black; 
+        }
+
+        main#tela {
+            width: 60%;
+            height: 60%;
+            display: flex;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            flex-direction: column;
+            background-color: white;
+        }
+
+        #uno {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 100%;
+            height: 25%;
+            background-color: black;
+            z-index: 1;
+            transform: translateX(-100%);
+        }
+        
+        #dos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50%;
+            background-color: cyan;
+            z-index: 0;
+            transform: translateY(-155%);
+        }
+
+        #tres {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            width: 100%;
+            height: 25%;
+            background-color: black;
+            z-index: 1;
+            transform: translateX(100%);
+        }
+
+        #uno, #dos, #tres {
+            cursor: pointer;
+        }
+
+        #uno p, #dos p, #tres p {
+            opacity: 0;
+            font-weight: bolder;
+            transition: 1s;
+        }
+
+        #uno:hover p, #dos:hover p, #tres:hover p {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+        }
+
+        #uno, #tres {
+            color: white;
+        }
+
+        .bloco {
+            transition: 
+            transform 1s ease-out,
+            opacity .5s ease-in;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+
+<body id="base">
+    <main id="tela">
+        <div class="bloco" id="uno">
+            <div class="estilo">
+                <p><code>
+                #uno {<br>
+                    width: 100%;<br>
+                    height: 25%;<br>
+                    background-color: black;<br>
+                    z-index: 1;<br>
+                    transform: translateX(-100%);<br>
+                }
+            </p></code>
+            </div>
+        </div>
+        <div class="bloco" id="dos">
+            <div class="estilo">
+                <p><code>
+                    #dos {<br>
+                        display: flex;<br>
+                        justify-content: center;<br>
+                        align-items: center;<br>
+                        width: 100%;<br>
+                        height: 50%;<br>
+                        background-color: cyan;<br>
+                        z-index: 0;<br>
+                        transform: translateY(-155%);<br>
+                    }
+                </code></p>
+            </div>
+        </div>
+        <div class="bloco" id="tres">
+            <div class="estilo">
+                <p><code>
+                #tres {<br>
+                    width: 100%;<br>
+                    height: 25%;<br>
+                    background-color: black;<br>
+                    z-index: 1;<br>
+                    transform: translateX(100%);<br>
+                }
+            </p></code>
+            </div>
+        </div>
+    </main>
+    <script>
+        const foco = document.getElementById("tela");
+        const b1 = document.getElementById("uno");
+        const b2 = document.getElementById("dos");
+        const b3 = document.getElementById("tres");
+
+        foco.addEventListener("click", () => {
+            setTimeout(() => moverElemento(b1, "X", 0), 1500);
+            setTimeout(() => moverElemento(b2, "Y", 0), 4500);
+            setTimeout(() => moverElemento(b3, "X", 0), 3000);
+        });
+
+/*
+Aqui nos parametros confesso que peguei a logica e coloquei no bolso, mandei muito bem nesse raciocinio.
+Simplesmente aplausos para o pai!
+*/
+
+        function moverElemento(id, sentido, x) {
+            id.style.transform = `translate${sentido}(${x}%)`;
+        }
+    </script>
+</body>
+
+</html>

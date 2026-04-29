@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title> HueRotate() </title>
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            height: 100dvh;
+            width: 100dvw;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        #alvo {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="alvo"></div>
+    </body>
+    <script>
+        const alvo = document.getElementById("alvo");
+        
+        let state = null;
+        let x = 0;
+        let y = 80;
+
+        function hueRotate() {
+            alvo.style.backgroundColor = `hsl(${x}, ${y}%, 50%)`;
+            x++;
+            
+            if (x >= 359) {
+                x = 0;
+            }
+        }
+
+        alvo.addEventListener("mouseover", () => {
+            if (state === null) {
+                state = setInterval(hueRotate, 50);
+            } 
+        });
+
+        alvo.addEventListener("mouseout", () => {
+            clearInterval(state);
+            state = null;
+        });
+    </script>
+</html>
